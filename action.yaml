@@ -92,7 +92,7 @@ runs:
 
     - name: Load install packages from GitHub cache
       if: ${{ inputs.provision == 'true' && inputs.install-dependencies == 'true' }}
-      uses: actions/cache@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8 # v3.3.1
+      uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
       id: package-cache
       with:
         path: /tmp/.ubuntu-pkgs
@@ -126,7 +126,7 @@ runs:
         sudo apt-get -y --no-install-recommends install /tmp/.ubuntu-pkgs/*.deb
         sudo kvm-ok
 
-    - uses: actions/cache@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8 # v3.3.1
+    - uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
       if: ${{ inputs.provision == 'true' }}
       id: cache-lvh-image
       with:
